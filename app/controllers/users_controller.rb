@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def new
-    @user=User.new
+    # Provide the model instance to the form_for helper
+    @user = User.new
   end
 
   def create
@@ -8,11 +9,15 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "You have successfully signed up!"
       redirect_to root_path
+    else
+      render :new
+    end
   end
-end
 
 private
-  def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
+
+    # Implement Strong Params
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
 end
