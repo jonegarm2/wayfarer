@@ -10,10 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180413180815) do
+ActiveRecord::Schema.define(version: 20180413231734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "destinations", force: :cascade do |t|
+    t.string "description"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.bigint "destination_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["destination_id"], name: "index_pictures_on_destination_id"
+    t.index ["post_id"], name: "index_pictures_on_post_id"
+    t.index ["user_id"], name: "index_pictures_on_user_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text "content"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "preferences", force: :cascade do |t|
+    t.bigint "destination_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["destination_id"], name: "index_preferences_on_destination_id"
+    t.index ["user_id"], name: "index_preferences_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -24,4 +62,9 @@ ActiveRecord::Schema.define(version: 20180413180815) do
     t.string "password_digest"
   end
 
+  add_foreign_key "pictures", "destinations"
+  add_foreign_key "pictures", "posts"
+  add_foreign_key "pictures", "users"
+  add_foreign_key "preferences", "destinations"
+  add_foreign_key "preferences", "users"
 end
