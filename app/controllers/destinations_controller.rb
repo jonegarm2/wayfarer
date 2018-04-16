@@ -4,6 +4,10 @@ class DestinationsController < ApplicationController
     # performing CUD on houses
     #before_action :authorize, except: [:index, :show]
     def index
-        @destination = current_user.destinations
+        if current_user.nil?
+           redirect_to '/login'
+        else
+            @destination = current_user.destinations
+        end
     end
 end

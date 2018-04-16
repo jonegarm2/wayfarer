@@ -7,3 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 users = User.create(name: "JonJon", email: "jong@email.com", admin: true, password: "cba321")
 
+Destination.create([{name: "South America", description: "A giant futbol continent"}, 
+{name: "North America", description: "New York and Hollywood"},
+{name: "Asia", description: "Far East and great food"},
+{name: "Europe", description: "Castles and History"},
+{name: "Australia", description: "Let's throw another shrimp on the barbie"},
+{name: "Africa", description: "Pyramids, Deserts, and Safaris"},
+{name: "Antarctica", description: "Penguins and snow"}])
+
