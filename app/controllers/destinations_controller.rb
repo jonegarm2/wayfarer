@@ -7,7 +7,7 @@ class DestinationsController < ApplicationController
         if current_user.nil?
            redirect_to '/login'
         else
-            @destination = current_user.destinations
+            @destination = Destination.all
         end
     end
 end
