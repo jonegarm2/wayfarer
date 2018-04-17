@@ -1,33 +1,22 @@
-<%@destination.each do|d| %>
-    <h1><%= destination.name %></h1>
+<div class="row">
+<%@destination.each do|destination| %>
+   <div class="col s6">
+      <div class="card">
+        <div class="card-image">
+          <img src="http://via.placeholder.com/350x150">
+          <span class="card-title"><%=destination.name%></span>
+        </div>
+        <div class="card-content">
+          <p><%=destination.description%></p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
     <%end%>
+  </div>
 
-    <%= form_for @user do |f| %>
-   <div>
-       <%= f.label :name, “Hiker’s name:” %>
-       <%= f.text_field :name %>
-   </div>
-   <div>
-       <%= f.label :email, “Hiker’s e-mail address:” %>
-       <%= f.email_field :email %>
-   </div>
-   <div>
-       <%= f.label :password_digest, “Hiker’s password:” %>
-       <%= f.password_field :password_digest %>
-   </div>
-   <div>
-       <%= f.label :level, “Hiker’s ability level:” %>
-       <%= f.select(:level) do %>
-           <% [[‘Novice’, “Novice”], [‘Intermediate’, “Intermediate”], [‘Expert’, “Expert”], [‘Sherpa’, “Sherpa”]].each do |c| -%>
-               <%= content_tag(:option, c.first, value: c.last) %>
-           <% end %>
-       <% end %>
-   </div>
-       <div>
-       <%= f.label :contact, “Hiker’s phone:” %>
-       <%= f.text_field :contact %>
-   </div>
-   <div>
-       <%= f.label :facebook_url, “Hiker’s Facebook:” %>
-       <%= f.url_field :name %>
-   </div>
+    
+
+   
