@@ -1,0 +1,19 @@
+<h1>Profile</h1>
+
+<%= link_to "All Continents", root_path %>
+
+
+<%= form_for [@user] do |f| %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.file_field :image %>
+
+
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+
+    <%= f.submit %>
+
+<% end %>
