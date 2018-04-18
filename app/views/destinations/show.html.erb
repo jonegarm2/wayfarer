@@ -1,7 +1,6 @@
 <h1>Check out similar Posts locations</h1>
 <%= link_to "All Continents", root_path %>
-
-<%= link_to "New Post", posts_new_path %>
+<%= link_to "New Post", new_destination_post_path(@destination) %>
 
 <center>
 <h2>All Posts</h2>
@@ -15,8 +14,9 @@
     </tr>
     <% @posts.each do |post| %>
         <tr>
-            <td><%= link_to post.title, post_path(post) %></td>
+            <td><%= link_to post.title, destination_post_path(@destination, post) %></td>
             <td><%= post.created_at %></td>
+            <td><%= link_to "Delete", destroy_post_path(post), method: :delete %></td>
         </tr>
     <% end %>
     </tbody>

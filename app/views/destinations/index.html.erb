@@ -1,7 +1,7 @@
 <h1>Where do you want to go?</h1>
 
 <div class="row">
-<%@destination.each do|destination| %>
+<%@destination.each do |destination| %>
    <div class="col s6">
       <div class="card">
         <div class="card-image">
@@ -12,7 +12,7 @@
           <p><%=destination.description%></p>
         </div>
         <div class="card-action">
-          <%= link_to "See Posts about your Location", posts_path(@post) %>
+          <%= link_to "See Posts about your Location", destination_path(destination) %>
         </div>
       </div>
     </div>

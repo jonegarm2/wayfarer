@@ -3,6 +3,7 @@ class DestinationsController < ApplicationController
     # Prevent anonymous users from 
     # performing CUD on houses
     #before_action :authorize, except: [:index, :show]
+    
     def index
         if current_user.nil?
            redirect_to '/login'
@@ -10,7 +11,9 @@ class DestinationsController < ApplicationController
             @destination = Destination.all
         end
     end
+
     def show
-    @post = Post.find(params[:id])
+        @posts = Destination.find(params[:id]).posts
+        @destination = Destination.find(params[:id])
     end
 end
