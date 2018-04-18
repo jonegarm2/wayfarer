@@ -10,4 +10,7 @@ class DestinationsController < ApplicationController
             @destination = Destination.all
         end
     end
+    def show
+    @post = Post.find(params[:id])
+    end
 end

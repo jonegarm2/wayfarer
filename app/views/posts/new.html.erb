@@ -1,12 +1,15 @@
 
-<center>
-<h1>New Posty Post</h1>
+<h1>New Post</h1>
+
+<%= link_to "All Continents", root_path %>
 
 
 <%= form_for @post do |f| %>
 
     <%= f.label :title %>
     <%= f.text_field :title %>
+
+    <%= f.file_field :image %>
 
 
     <%= f.label :content %>

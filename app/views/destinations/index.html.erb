@@ -1,16 +1,18 @@
+<h1>Where do you want to go?</h1>
+
 <div class="row">
 <%@destination.each do|destination| %>
    <div class="col s6">
       <div class="card">
         <div class="card-image">
-          <img src="http://via.placeholder.com/350x150">
+          <%= image_tag (destination.pictures.first.image.url.sub!("/system", "http://s3-us-west-1.amazonaws.com/wayfarergeneral")) %>
           <span class="card-title"><%=destination.name%></span>
         </div>
         <div class="card-content">
           <p><%=destination.description%></p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+          <%= link_to "See Posts about your Location", posts_path(@post) %>
         </div>
       </div>
     </div>
@@ -18,5 +20,4 @@
   </div>
 
     
-
    
