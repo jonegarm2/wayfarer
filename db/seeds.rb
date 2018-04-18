@@ -21,6 +21,12 @@ Destination.create([
 ])
 
 image1 = File.new("#{Rails.root}/db/seed_images/Machu_Picchu.jpg")
+image2 = File.new("#{Rails.root}/db/seed_images/America.jpg")
+image3 = File.new("#{Rails.root}/db/seed_images/Asia.jpg")
+image4 = File.new("#{Rails.root}/db/seed_images/Europe.jpg")
+image5 = File.new("#{Rails.root}/db/seed_images/Australia.jpg")
+image6 = File.new("#{Rails.root}/db/seed_images/Africa.jpg")
+image7 = File.new("#{Rails.root}/db/seed_images/Antarctica.jpg")
 
 Destination.all.each do |destination| 
     destination.pictures << Picture.new({ name: "Jon in Machu Piccu", image: image1 })
