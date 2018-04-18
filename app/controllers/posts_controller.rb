@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     def create
         @post = Post.new(params.require(:post).permit(:title, :content))
         Destination.first.posts << @post
-        redirect_to posts_path
+        redirect_to destination_path(@post.destination)
 
         # if @post.save
         #     redirect_to root_path
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     def destroy
         @post = Post.find(params[:id])
         @post.destroy
-        redirect_to posts_path
+        redirect_to destination_path(@post.destination)
     end
 
 end

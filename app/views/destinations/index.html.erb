@@ -3,7 +3,7 @@
 <div class="row">
 <%@destination.each do |destination| %>
    <div class="col s6">
-      <div class="card">
+      <div class="card-panel teal lighten-2">
         <div class="card-image">
           <% if !destination.pictures.first.nil? %>
             <%= image_tag(destination.pictures.first.image.url) %>
@@ -14,7 +14,7 @@
           <p><%=destination.description%></p>
         </div>
         <div class="card-action">
-          <%= link_to "See Posts about your Location", destination_path(destination) %>
+          <%= link_to "See more Posts about your Location", destination_path(destination) %>
         </div>
       </div>
     </div>
