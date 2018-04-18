@@ -6,7 +6,7 @@
       <div class="card-panel teal lighten-2">
         <div class="card-image">
           <% if !destination.pictures.first.nil? %>
-            <%= image_tag(destination.pictures.first.image.url) %>
+            <%= destination.pictures.first.image.url %>
           <% end %>
           <span class="card-title"><%=destination.name%></span>
         </div>
