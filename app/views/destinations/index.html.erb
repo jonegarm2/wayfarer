@@ -6,7 +6,8 @@
       <div class="card-panel teal lighten-2">
         <div class="card-image">
           <% if !destination.pictures.first.nil? %> 
-            <%= image_tag(destination.pictures.first.image.url.sub!("/system", "http://s3-us-west-1.amazonaws.com/wayfarergeneral")) %>
+          <%= destination.pictures.first.image.url %>
+            <img class="dummy" src="<%= destination.pictures.first.image.url %>">
           <% end %>
           <span class="card-title"><%=destination.name%></span>
         </div>
