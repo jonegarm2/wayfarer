@@ -5,8 +5,7 @@
    <div class="col s12">
       <div class="card-panel teal lighten-2">
         <div class="card-image">
-          <% if !destination.pictures.first.nil? %> 
-          <%= destination.pictures.first.image.url %>
+          <% if !destination.pictures.first.nil? %>         
             <img class="dummy" src="<%= destination.pictures.first.image.url %>">
           <% end %>
           <span class="card-title"><%=destination.name%></span>
