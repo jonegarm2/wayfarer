@@ -13,15 +13,18 @@
  *= require_tree .
  *= require_self
  */
- *  { 
+
+*  { 
     Background-color: black;
     color: white;
     border-color: white;
     font-family: 'Chewy', cursive;
  }
 
- .toggle {
+.toggle {
     display: block;
  }
     
+card-image {
+     size: 300px;
  }

@@ -28,7 +28,7 @@ image5 = File.new("#{Rails.root}/db/seed_images/Australia.jpg")
 image6 = File.new("#{Rails.root}/db/seed_images/Africa.jpg")
 image7 = File.new("#{Rails.root}/db/seed_images/Antarctica.jpg")
 
-Destination.all.each do |destination| 
-    destination.pictures << Picture.new({ name: "Jon in Machu Piccu", image: image1 })
+Destination.all.each_with_index do |destination, i| 
+    destination.pictures << Picture.new({ name: "Jon in Machu Piccu", image: eval("image#{i + 1}") })
 end
 

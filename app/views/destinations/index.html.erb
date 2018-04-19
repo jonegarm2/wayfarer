@@ -1,12 +1,12 @@
 <h1>Where do you want to go?</h1>
 
 <div class="row">
-<%@destination.each do |destination| %>
-   <div class="col s6">
+<%@destinations.each do |destination| %>
+   <div class="col s12">
       <div class="card-panel teal lighten-2">
         <div class="card-image">
           <% if !destination.pictures.first.nil? %> 
-            <%= image_tag(destination.pictures.first.image.url) %>
+            <%= image_tag(destination.pictures.first.image.url.sub!("/system", "http://s3-us-west-1.amazonaws.com/wayfarergeneral")) %>
           <% end %>
           <span class="card-title"><%=destination.name%></span>
         </div>
