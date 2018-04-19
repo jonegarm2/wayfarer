@@ -18,5 +18,10 @@
     color: white;
     border-color: white;
     font-family: 'Chewy', cursive;
+ }
+
+ .toggle {
+    display: block;
+ }
     
  }

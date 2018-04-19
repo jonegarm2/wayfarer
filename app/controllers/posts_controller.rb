@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.new(params.require(:post).permit(:title, :content))
-        Destination.first.posts << @post
+        Destination.find(params[:destination_id]).posts << @post
         redirect_to destination_path(@post.destination)
 
         # if @post.save
