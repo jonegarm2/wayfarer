@@ -15,10 +15,10 @@
     </tr>
     <% @posts.each do |post| %>
         <tr>
-            <td><%= link_to post.title, destination_post_path(@destination, post) %></td>
+            <td><%= link_to post.title, post_path(post) %></td>
             <td><%= post.created_at %></td>
             <% if current_user.admin %>
-            <td><%= link_to "Delete", destroy_post_path(post), method: :delete %></td>
+                <td><%= link_to "Delete", destroy_post_path(post), method: :delete %></td>
             <%end%>
         </tr>
     <% end %>

@@ -1,8 +1,14 @@
 
 <%= link_to "All Continents", root_path %>
 
-<%= link_to "New Posts", posts_new_path %>
 
 <h3><%= @post.title %></h3>
 
 <%= @post.content %>
+
+<div>
+    <% if @post.user == current_user %>
+        <%= link_to "Edit", edit_post_path(@post) %> &nbsp;&nbsp;|&nbsp;&nbsp;
+        <%= link_to "Delete", post_path(@post), method: :delete %>
+    <% end %>
+</div>

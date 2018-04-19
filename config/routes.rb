@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'destinations#index'
   resources :destinations do 
-    resources :posts 
+    resources :posts, shallow: true
   end
 
   # get "/posts", to: "posts#index"
